@@ -1,63 +1,68 @@
-import  { useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/bundle"
+import 'swiper/css'
+import "./styles.css"
+
+import { Navigation, Autoplay, Pagination} from 'swiper/modules';
 
 const Slider = () => {
-    const sliderRef = useRef(null);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            const currentSlide = sliderRef.current.querySelector('.carousel-item:not(.hidden)');
-            const nextSlide = currentSlide.nextElementSibling || sliderRef.current.firstElementChild;
-            currentSlide.classList.add('hidden');
-            nextSlide.classList.remove('hidden');
-        }, 3000); 
-
-        return () => clearInterval(intervalId);
-    }, []);
-
     return (
-        <div ref={sliderRef} className="carousel w-full min-h-80 rounded-3xl">
-            <div id="slide1" className="carousel-item relative w-full">
-                <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-                <div className="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0">
-                    <p className="text-white text-4xl font-extrabold text-center">Text content here</p>
-                </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide4" className="btn btn-circle">❮</a>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide2" className="carousel-item relative w-full min-h-80 hidden">
-                <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-                <div className="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0">
-                    <p className="text-white text-4xl font-extrabold text-center">Text content here</p>
-                </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle">❮</a>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide3" className="carousel-item relative w-full min-h-80 hidden">
-                <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-                <div className="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0">
-                    <p className="text-white text-4xl font-extrabold text-center">Text content here</p>
-                </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle">❮</a>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide4" className="carousel-item relative w-full min-h-80 hidden">
-                <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-                <div className="absolute flex justify-center items-center top-0 left-0 right-0 bottom-0">
-                    <p className="text-white text-4xl font-extrabold text-center">Text content here</p>
-                </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
-                </div>
-            </div>
+        <div className="w-11/12 mx-auto rounded-3xl overflow-clip z-1 mt-16 lg:mt-10" data-aos="flip-up" data-aos-delay="150">
+
+            <Swiper
+                    style={{
+                        '--swiper-navigation-color': '#23BE0A',
+                        '--swiper-pagination-color': '#23BE0A',
+                    }}
+             navigation={true} 
+             autoplay={{
+                delay: 1800,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+            modules={[Navigation, Autoplay, Pagination]}
+            loop={true}
+            >
+                <SwiperSlide>
+                    <div className="slide slide-1  flex flex-col" data-aos="fade-up" >
+                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6 ' data-aos="zoom-in-down" >Urban Oasis</h1>
+                        <p className=" w-10/12 text-sm lg:text-md text-white max-sm:hidden text-center">Immerse yourself in the vibrant pulse of city life with our urban oasis collection. Discover stylish apartments, trendy lofts, and chic condominiums nestled in the heart of bustling metropolises. Experience the convenience of city living without compromising on comfort and style.</p>
+                        <p className="w-9/12 text-sm lg:text-md text-white md:hidden">Experience vibrant city life with stylish apartments and trendy lofts in our Urban Oasis collection.</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="slide slide-2 flex flex-col ">
+                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6'>Seaside Serenity</h1>
+                        <p className=" w-10/12 text-sm lg:text-md text-white max-sm:hidden text-center">Escape to the tranquil shores and embrace the serenity of coastal living. Dive into our seaside serenity collection featuring beachfront villas, cozy cottages, and elegant waterfront properties. Let the sound of waves and salty breeze rejuvenate your soul as you unwind in your own piece of paradise.</p>
+                        <p className="w-9/12 text-sm lg:text-md text-white md:hidden">Escape to tranquil shores and embrace coastal living in our Seaside Serenity collection.</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="slide slide-3 flex flex-col ">
+                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6'>Suburban Charm</h1>
+                        <p className=" w-10/12 text-sm lg:text-md text-white max-sm:hidden text-center">Experience the warmth of community and the comfort of home in our suburban charm collection. Discover family-friendly neighborhoods, cozy townhouses, and spacious suburban estates surrounded by lush greenery and amenities. Live the quintessential suburban lifestyle where convenience meets tranquility. </p>
+                        <p className="w-9/12 text-sm lg:text-md text-white md:hidden">Find warmth and comfort in family-friendly neighborhoods and cozy townhouses with our Suburban Charm collection.</p>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="slide slide-4 flex flex-col ">
+                        <h1 className='text-[#23BE0A] text-2xl lg:text-7xl font-bold mb-6'>Mountain Retreat</h1>
+                        <p className=" w-10/12 text-sm lg:text-md text-white max-sm:hidden text-center">Embark on an adventure to the mountains and indulge in the beauty of nature with our mountain retreat collection. Explore rustic cabins, luxurious chalets, and secluded lodges nestled amidst breathtaking alpine landscapes. Whether your an outdoor enthusiast or seeking peace and solitude, our mountain retreats offer the perfect escape.</p>
+                        <p className="w-9/12 text-sm lg:text-md text-white md:hidden">Embark on a mountain adventure and indulge in nature beauty with our Mountain Retreat collection.</p>
+                    </div>
+
+                </SwiperSlide>
+
+            </Swiper>
+
+
         </div>
     );
 };
 
 export default Slider;
+
+
+
