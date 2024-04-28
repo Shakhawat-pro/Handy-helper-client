@@ -11,6 +11,7 @@ import Login from './components/page/Login.jsx';
 import Register from './components/page/Register.jsx';
 import AllSpot from './components/spots/AllSpot.jsx';
 import AddSpots from './components/spots/AddSpots.jsx';
+import MyList from './components/spots/MyList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:"/addSpots",
         element:<AddSpots></AddSpots>
+      },
+      {
+        path:"/myList",
+        element: <MyList></MyList>
       }
     ]
   },
