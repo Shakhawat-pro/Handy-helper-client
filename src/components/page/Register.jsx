@@ -5,6 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { updateProfile } from "firebase/auth";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
+import Lottie from "lottie-react";
+import RegisterPage from '../../../public/RegisterPage.json'
 
 const Register = () => {
     const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
@@ -72,7 +74,10 @@ const Register = () => {
             })
     }
     return (
-        <div>
+        <div className="flex flex-col md:flex-row">
+            <div className='md:w-1/2'>
+                <Lottie animationData={RegisterPage} loop={true} ></Lottie>
+            </div>
             <div className="text-center border-2 border-[#23BE0A] md:w-5/12 mx-auto p-10">
                 <div>
                     <ToastContainer />
@@ -80,9 +85,9 @@ const Register = () => {
                     <p>Enter your details below</p>
                     <p className="mt-2">Already a member? <Link to='/login' className="text-[#23BE0A] font-bold underline">Login Now.</Link></p>
                 </div>
-                <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-5 mb-10">
-                    <button onClick={handleGoogleSignIn} className="btn text-lg"><img className="w-6" src="/public/google.png" alt="" /> Sign in with Google</button>
-                    <button onClick={handleGithubSignIn} className="btn text-lg"><img className="w-6" src="/public/github.png" alt="" /> Sign in with Github</button>
+                <div className="flex flex-col lg:flex-row justify-center gap-4 md:gap-8 mt-5 mb-10">
+                    <button onClick={handleGoogleSignIn} className="btn text-lg"><img className="w-6" src="/google.png" alt="" /> Sign in with Google</button>
+                    <button onClick={handleGithubSignIn} className="btn text-lg"><img className="w-6" src="/github.png" alt="" /> Sign in with Github</button>
                 </div>
                 <div className="divider">OR</div>
                 <div>
