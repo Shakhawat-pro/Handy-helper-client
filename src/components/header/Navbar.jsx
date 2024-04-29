@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 import { useContext, useEffect, useState } from "react";
+import { Typewriter } from 'react-simple-typewriter';
 import { AuthContext } from "../../context/AuthProvider";
 
 const Navbar = () => {
@@ -48,8 +49,17 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className={`btn btn-ghost p-0 text-xl md:text-3xl font-bold ${theme === "light" ? "text-black" : "text-white"} glow`}>Explore<p className=" ">Asia</p></a>
-                </div>
+                    <a className={`btn btn-ghost p-0 text-xl md:text-3xl font-bold ${theme === "light" ? "text-black" : "text-white"} glow`}>
+                        <Typewriter
+                            words={['Explore Asia']}
+                            loop={false}
+                            cursor
+                            cursorStyle='_'
+                            typeSpeed={100}
+                            deleteSpeed={100}
+                            delaySpeed={2000}
+                        />
+                    </a>                </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className={`menu-horizontal  px-1 space-x-5 ${theme === "light" ? "text-black" : "text-white"}`}>
                         {navLinks}
