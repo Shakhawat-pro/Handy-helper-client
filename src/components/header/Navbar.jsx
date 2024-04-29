@@ -32,7 +32,7 @@ const Navbar = () => {
     const navLinks = <>
         <li data-aos="fade-up" data-aos-delay="50" className=""><NavLink to="/">Home</NavLink></li>
         <li data-aos="fade-up" data-aos-delay="100" className=""><NavLink to="/allSpots">All Tourists Spot</NavLink></li>
-        <li data-aos="fade-up" data-aos-delay="100" className=""><NavLink to="/addSpots">Add Spots</NavLink></li>
+        <li data-aos="fade-up" data-aos-delay="100" className=""><NavLink to="/addSpots">Add Tourist Spots</NavLink></li>
         <li data-aos="fade-up" data-aos-delay="200" className=""><NavLink to="/MyList">My List</NavLink></li>
     </>
 

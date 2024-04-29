@@ -15,6 +15,7 @@ import MyList from './components/spots/MyList.jsx';
 import UpdateSpot from './components/spots/UpdateSpot.jsx';
 import SoloCard from './components/spots/SoloCard.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
+import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,21 +42,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/addSpots",
-        element: <AddSpots></AddSpots>
+        element: <PrivateRoute><AddSpots></AddSpots></PrivateRoute>
       },
       {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: <PrivateRoute><MyList></MyList></PrivateRoute> ,
         loader: () => fetch('http://localhost:5000/spot')
       },
       {
         path: '/updateSpot/:id',
-        element: <UpdateSpot></UpdateSpot>,
+        element: <PrivateRoute><UpdateSpot></UpdateSpot></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
       },
       {
         path: '/solosSpot/:id',
-        element: <SoloCard></SoloCard>,
+        element: <PrivateRoute><SoloCard></SoloCard></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
       }
 
