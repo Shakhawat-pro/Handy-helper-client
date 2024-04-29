@@ -7,7 +7,7 @@ import { Navigation, Autoplay, Pagination} from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className="w-11/12 mx-auto rounded-3xl overflow-clip z-1 mt-16 lg:mt-10" data-aos="flip-up" data-aos-delay="150">
+        <div className="mx-auto rounded-3xl overflow-clip z-1 mt-16 lg:mt-10" data-aos="flip-up" data-aos-delay="150">
 
             <Swiper
                     style={{

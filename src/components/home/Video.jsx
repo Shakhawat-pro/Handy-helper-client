@@ -2,8 +2,8 @@
 
 const Video = () => {
     return (
-        <div className="flex flex-col-reverse md:flex-row gap-20 mt-10">
-            <div className="space-y-5">
+        <div className="flex flex-col-reverse md:flex-row  mt-10 justify-between">
+            <div className="space-y-5 w-6/12">
                 <h1 className="text-3xl font-bold text-[#23BE0A]">A Simple Perfect Place To Get Lost</h1>
                 <p>Cox's Bazar, nestled in southeastern Bangladesh, boasts the world's longest uninterrupted sandy beach, stretching for miles along its pristine coastline. With its azure waters and golden sands, it offers an idyllic retreat for beach enthusiasts and adventurers alike. Beyond its captivating shoreline, Cox's Bazar also features lush hillsides that provide breathtaking panoramic views and opportunities for trekking and exploration. The town's vibrant atmosphere is enriched by its bustling markets, showcasing local crafts and cuisine, and its welcoming fishing villages, offering a glimpse into the region's rich cultural heritage. Cox's Bazar promises a serene escape surrounded by natural beauty and authentic experiences.</p>
                 <ul className="list-disc ml-10">

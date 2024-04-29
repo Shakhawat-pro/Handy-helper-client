@@ -1,10 +1,10 @@
-
+import './footer.css'
 const Footer = () => {
     return (
         <div className="">
             <footer className="footer footer-center p-10 bg-slate-700 text-white mt-10 border-t-2 border-[#23BE0A]">
                 <aside>
-                    <h1 className="text-4xl font-extrabold text-white">Explore Asia</h1>
+                    <h1 className="text-4xl font-extrabold text-white glow">Explore Asia</h1>
                     <p className="text-lg mt-5">
                     Explore Asia provides reliable and unforgettable travel experiences for adventurers seeking to explore the wonders of Asia. 
                     </p>
