@@ -12,6 +12,7 @@ import Register from './components/page/Register.jsx';
 import AllSpot from './components/spots/AllSpot.jsx';
 import AddSpots from './components/spots/AddSpots.jsx';
 import MyList from './components/spots/MyList.jsx';
+import UpdateSpot from './components/spots/UpdateSpot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
         path:"/myList",
         element: <MyList></MyList>,
         loader: () => fetch('http://localhost:5000/spot')
+      },
+      {
+        path:'/updateSpot/:id',
+        element: <UpdateSpot></UpdateSpot>,
+        loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+
 
       }
     ]

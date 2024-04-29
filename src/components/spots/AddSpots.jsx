@@ -1,4 +1,3 @@
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
 
@@ -51,7 +50,6 @@ const AddSpots = () => {
 
     return (
         <div className="text-center border-2 border-[#23BE0A] md:w-6/12 mx-auto p-10">
-            <ToastContainer />
             <div>
                 <h2 className="text-4xl mb-10 font-bold text-[#23BE0A]">Add a New Tourists Spot</h2>
             </div>
