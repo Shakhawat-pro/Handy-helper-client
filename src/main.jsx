@@ -14,48 +14,49 @@ import AddSpots from './components/spots/AddSpots.jsx';
 import MyList from './components/spots/MyList.jsx';
 import UpdateSpot from './components/spots/UpdateSpot.jsx';
 import SoloCard from './components/spots/SoloCard.jsx';
+import AuthProvider from './context/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    children:[
+    children: [
       {
-        path:"/",
+        path: "/",
         element: <Home></Home>,
         loader: () => fetch('http://localhost:5000/spot')
       },
       {
-        path:"/login",
+        path: "/login",
         element: <Login></Login>
       },
       {
-        path:"/register",
-        element:<Register></Register>
+        path: "/register",
+        element: <Register></Register>
       },
       {
-        path:"/allSpots",
+        path: "/allSpots",
         element: <AllSpot></AllSpot>,
         loader: () => fetch('http://localhost:5000/spot')
       },
       {
-        path:"/addSpots",
-        element:<AddSpots></AddSpots>
+        path: "/addSpots",
+        element: <AddSpots></AddSpots>
       },
       {
-        path:"/myList",
+        path: "/myList",
         element: <MyList></MyList>,
         loader: () => fetch('http://localhost:5000/spot')
       },
       {
-        path:'/updateSpot/:id',
+        path: '/updateSpot/:id',
         element: <UpdateSpot></UpdateSpot>,
-        loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
       },
       {
-        path:'/solosSpot/:id',
-        element: <SoloCard></SoloCard> ,
-        loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+        path: '/solosSpot/:id',
+        element: <SoloCard></SoloCard>,
+        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
       }
 
     ]
@@ -64,6 +65,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
