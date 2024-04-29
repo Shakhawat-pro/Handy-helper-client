@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 
-const EditCard = ({ spot, index }) => {
+const EditCard = ({ spot, index, setSpots, spots}) => {
     const { _id, name, cost, country, location, } = spot
 
     const handleDelete = (_id) => {
@@ -30,6 +30,8 @@ const EditCard = ({ spot, index }) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = spots.filter(spo => spo._id !== _id)
+                            setSpots(remaining)
                         }
                     })
             }
@@ -62,6 +64,8 @@ const EditCard = ({ spot, index }) => {
 export default EditCard;
 EditCard.propTypes = {
     spot: PropTypes.object,
-    index: PropTypes.number
+    spots: PropTypes.object,
+    setSpots: PropTypes.object,
+    index: PropTypes.number,
 
 }

@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import EditCard from "./EditCard";
+import { useState } from "react";
 
 const MyList = () => {
-    const spots = useLoaderData()
+    const loadedSpots = useLoaderData()
+    const [spots, setSpots] = useState(loadedSpots)
 
     return (
         <div className="w-11/12 mx-auto">
@@ -21,7 +23,7 @@ const MyList = () => {
                     </thead>
                     <tbody>
                         {
-                            spots.map((spot, index) => <EditCard key={spot._id} spot={spot} index={index+1}></EditCard>)
+                            spots.map((spot, index) => <EditCard key={spot._id} spot={spot} spots={spots} setSpots={setSpots} index={index+1}></EditCard>)
                         }
                     </tbody>
                 </table>
