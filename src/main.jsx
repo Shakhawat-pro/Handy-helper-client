@@ -13,6 +13,7 @@ import AllSpot from './components/spots/AllSpot.jsx';
 import AddSpots from './components/spots/AddSpots.jsx';
 import MyList from './components/spots/MyList.jsx';
 import UpdateSpot from './components/spots/UpdateSpot.jsx';
+import SoloCard from './components/spots/SoloCard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/spot')
       },
       {
         path:"/login",
@@ -49,9 +51,13 @@ const router = createBrowserRouter([
         path:'/updateSpot/:id',
         element: <UpdateSpot></UpdateSpot>,
         loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
-
-
+      },
+      {
+        path:'/solosSpot/:id',
+        element: <SoloCard></SoloCard> ,
+        loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
       }
+
     ]
   },
 ]);

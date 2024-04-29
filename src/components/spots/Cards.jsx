@@ -1,8 +1,15 @@
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Cards = ({ spot }) => {
-    const { name, image, country, location, seasonality, travel, cost, Visitors, description } = spot
+    const {_id, name, image, country, location, seasonality, travel, cost, Visitors, description } = spot
+    const navigate = useNavigate()
+
+
+    const handleClick = () => {
+        navigate(`/solosSpot/${_id}`)
+    }
     return (
         <div className="flex justify-center">
             <div className="max-w-sm w-full">
@@ -36,8 +43,8 @@ const Cards = ({ spot }) => {
                             <p className='text-lg font-semibold'>Average Cost:<span className='text-[#23BE0A]'> {cost} BDT</span></p>
                         </div>
                         <hr style={{ borderBottom: "1px dotted #888", height: "1px" }} className='mt-7 mb-3' />
-                        <div data-aos="fade-up" data-aos-delay="80" className=''>
-                            <button className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
+                        <div data-aos="fade-up" data-aos-delay="80" className=' '>
+                            <button onClick={handleClick} className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
                         </div>
                     </div>
                 </div>
