@@ -19,7 +19,17 @@ const AddSpots = () => {
         console.log(info);
 
         // Send data to server
-        fetch()
+        fetch('http://localhost:5000/spot', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(info)
+        })
+        .then(res=> res.json())
+        .then(data => {
+            console.log(data);
+        })
 
     };
 
