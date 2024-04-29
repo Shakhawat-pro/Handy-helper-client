@@ -18,6 +18,9 @@ const AddSpots = () => {
         const info ={name, image, country, location, seasonality, travel, cost, Visitors, email, password, description}
         console.log(info);
 
+        // Send data to server
+        fetch()
+
     };
 
     return (
