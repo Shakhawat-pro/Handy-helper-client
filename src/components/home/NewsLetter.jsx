@@ -5,7 +5,7 @@ const NewsLetter = () => {
             <div>
                 <h1 className="text-center text-3xl font-bold mb-10">What Customer Say</h1>
             </div>
-            <div className="flex gap-20">
+            <div className="flex flex-col md:flex-row gap-20">
                 {/* 111111 */}
                 <div className="border-2 border-[#23BE0A] p-10 rounded-xl">
                     <div className="flex items-center gap-2 ">
