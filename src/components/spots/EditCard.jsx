@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 
 const EditCard = ({ spot, index, setSpots, spots}) => {
     const { _id, name, cost, country, location, } = spot
+    
 
     const handleDelete = (_id) => {
         console.log(_id);

@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../context/AuthProvider';
 
 const AddSpots = () => {
+    const { user } = useContext(AuthContext);
+    const userEmail = user.email;
 
 
     const handleAddProduct = e => {
@@ -65,7 +69,7 @@ const AddSpots = () => {
                         <label className=" w-full max-w-xs">
                             <div className="label">
                                 <span className="label-text">Image</span>                        </div>
-                            <input type="url" name="image" placeholder="Cost" className="input input-bordered w-full " />
+                            <input type="url" name="image" placeholder="URL" className="input input-bordered w-full " />
                         </label>
                     </div>
                     {/* 2nd row */}
@@ -120,7 +124,7 @@ const AddSpots = () => {
                         <label className=" w-full max-w-xs">
                             <div className="label">
                                 <span className="label-text">Email</span>                        </div>
-                            <input type="email" name="email" placeholder="Email" className="input input-bordered w-full " />
+                            <input type="email" name="email" placeholder="Email" defaultValue={userEmail} readOnly className="input input-bordered w-full " />
                         </label>
                         <label className=" w-full max-w-xs">
                             <div className="label">

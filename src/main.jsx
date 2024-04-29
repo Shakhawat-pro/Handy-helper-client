@@ -16,11 +16,13 @@ import UpdateSpot from './components/spots/UpdateSpot.jsx';
 import SoloCard from './components/spots/SoloCard.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
+import Error from './components/error/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
