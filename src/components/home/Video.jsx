@@ -13,7 +13,7 @@ const Video = () => {
                 </ul>
             </div>
             <div style={{ width: '100%', maxWidth: '560px' }} className="rounded-xl overflow-clip">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ssU0VFliS9g?si=XA_hpU8xli1twcNI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ssU0VFliS9g?si=XA_hpU8xli1twcNI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
         </div>
 

@@ -1,9 +1,13 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2'
 
 const AddSpots = () => {
 
 
     const handleAddProduct = e => {
         e.preventDefault();
+        const form = e.target
         const name = e.target.elements.name.value
         const image = e.target.elements.image.value
         const country = e.target.elements.country.value
@@ -29,12 +33,25 @@ const AddSpots = () => {
         .then(res=> res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId){
+                // toast("Add Successfully!");
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Add Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'GO Back'
+                  }).then(()=>{
+                    form.reset();
+                  })
+                
+            }
         })
 
     };
 
     return (
         <div className="text-center border-2 border-[#23BE0A] md:w-6/12 mx-auto p-10">
+            <ToastContainer />
             <div>
                 <h2 className="text-4xl mb-10 font-bold text-[#23BE0A]">Add a New Tourists Spot</h2>
             </div>
