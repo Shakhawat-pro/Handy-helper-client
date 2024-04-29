@@ -44,7 +44,7 @@ const Cards = ({ spot }) => {
                         </div>
                         <hr style={{ borderBottom: "1px dotted #888", height: "1px" }} className='mt-7 mb-3' />
                         <div data-aos="fade-up" data-aos-delay="80" className=' '>
-                            <button onClick={handleClick} className='btn w-full bg-[#23BE0A] text-white'>View Property</button>
+                            <button onClick={handleClick} className='btn w-full bg-[#23BE0A] text-white'>View Details</button>
                         </div>
                     </div>
                 </div>

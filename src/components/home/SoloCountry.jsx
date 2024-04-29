@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const SoloCountry = ({ country }) => {
-    const { name, image, short_description, } = country
+    const { _id, name, image, short_description, } = country
+    const navigate = useNavigate()
+    const handleClick = (_id) =>{
+        navigate(`/country/${_id}`)
+    }
     return (
         <div>
             <div className="card w-full h-[540px] bg-base-100 shadow-xl border-2 border-[#23BE0A] rounded-2xl ">
@@ -15,7 +20,7 @@ const SoloCountry = ({ country }) => {
                     </svg>{name}</h2>
                     <p>{short_description}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn bg-[#23BE0A] text-white">View Details</button>
+                        <button onClick={() => handleClick(_id)} className="btn bg-[#23BE0A] text-white">View Details</button>
                     </div>
                 </div>
             </div>

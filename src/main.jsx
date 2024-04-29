@@ -17,6 +17,7 @@ import SoloCard from './components/spots/SoloCard.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
 import PrivateRoute from './components/privateRoute/PrivateRoute.jsx';
 import Error from './components/error/Error.jsx';
+import CountryCard from './components/home/CountryCard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
         path: '/solosSpot/:id',
         element: <PrivateRoute><SoloCard></SoloCard></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
+      },
+      {
+        path: '/country/:id',
+        element: <PrivateRoute><CountryCard></CountryCard></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/country/${params.id}`)
       }
 
     ]
