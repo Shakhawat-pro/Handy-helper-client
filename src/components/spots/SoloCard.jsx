@@ -1,13 +1,20 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const SoloCard = () => {
     const spot = useLoaderData()
     const { name, image, country, location, seasonality, travel, cost, Visitors, description } = spot
 
+    useEffect(() => {
+        document.title = `${name}`
+        window.scrollTo(0, 0);
+
+    })
+
     return (
         <div className="w-11/12 mx-auto">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure className="max-w-6/12 w-full"><img src={image} alt="There is no Photo. Please Update it." /></figure>
+            <div className="card lg:card-side bg-base-100 border-2 border-[#23BE0A] shadow-xl rounded-2xl">
+                <figure className="max-w-6/12 w-full"><img className="rounded-l-xl" src={image} alt="There is no Photo. Please Update it." /></figure>
                 <div className="p-7">
                     <h2 className=" text-3xl font-bold">{name}</h2>
                     <div data-aos="fade-up" data-aos-delay="70" className="flex gap-4 mt-2">
