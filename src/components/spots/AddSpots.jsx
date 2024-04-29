@@ -26,7 +26,7 @@ const AddSpots = () => {
         console.log(info);
 
         // Send data to server
-        fetch('http://localhost:5000/spot', {
+        fetch('https://explore-asia-sever.vercel.app/spots', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ const Country = () => {
     const [countries, setCountries] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/country')
+        fetch('https://explore-asia-sever.vercel.app/country')
             .then(response => response.json())
             .then(data => setCountries(data))
             .catch(error => console.error('Error fetching content:', error));

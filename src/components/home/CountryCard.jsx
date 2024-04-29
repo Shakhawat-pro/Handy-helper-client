@@ -8,7 +8,7 @@ const CountryCard = () => {
     console.log('cccccccc', country);
     console.log('ffffffff', filteredSpots);
     useEffect(() => {
-        fetch('http://localhost:5000/spot')
+        fetch('https://explore-asia-sever.vercel.app/spots')
             .then(response => response.json())
             .then(data => {
                 console.log('Fetched spots data:', data);

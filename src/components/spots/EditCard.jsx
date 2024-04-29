@@ -19,7 +19,7 @@ const EditCard = ({ spot, index, setSpots, spots}) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/spot/${_id}`, {
+                fetch(`https://explore-asia-sever.vercel.app/spots/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -65,8 +65,8 @@ const EditCard = ({ spot, index, setSpots, spots}) => {
 export default EditCard;
 EditCard.propTypes = {
     spot: PropTypes.object,
-    spots: PropTypes.object,
-    setSpots: PropTypes.object,
+    spots: PropTypes.array,
+    setSpots: PropTypes.func,
     index: PropTypes.number,
 
 }

@@ -22,7 +22,7 @@ const UpdateSpot = () => {
         console.log(updateSpot);
 
                 // Send data to server
-                fetch(`http://localhost:5000/spot/${_id}`, {
+                fetch(`https://explore-asia-sever.vercel.app/spots/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/spot')
+        loader: () => fetch('https://explore-asia-sever.vercel.app/spots')
       },
       {
         path: "/login",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/allSpots",
         element: <AllSpot></AllSpot>,
-        loader: () => fetch('http://localhost:5000/spot')
+        loader: () => fetch('https://explore-asia-sever.vercel.app/spots')
       },
       {
         path: "/addSpots",
@@ -50,22 +50,22 @@ const router = createBrowserRouter([
       {
         path: "/myList",
         element: <PrivateRoute><MyList></MyList></PrivateRoute> ,
-        loader: () => fetch('http://localhost:5000/spot')
+        loader: () => fetch('https://explore-asia-sever.vercel.app/spots')
       },
       {
         path: '/updateSpot/:id',
         element: <PrivateRoute><UpdateSpot></UpdateSpot></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
+        loader: ({ params }) => fetch(`https://explore-asia-sever.vercel.app/spots/${params.id}`)
       },
       {
         path: '/solosSpot/:id',
         element: <PrivateRoute><SoloCard></SoloCard></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
+        loader: ({ params }) => fetch(`https://explore-asia-sever.vercel.app/spots/${params.id}`)
       },
       {
         path: '/country/:id',
         element: <PrivateRoute><CountryCard></CountryCard></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/country/${params.id}`)
+        loader: ({ params }) => fetch(`https://explore-asia-sever.vercel.app/country/${params.id}`)
       }
 
     ]
