@@ -5,6 +5,8 @@
 
 Explore Asia is a web application that helps users discover and explore various tourist spots in Asia. Whether you're planning your next vacation or just looking for some travel inspiration, Explore Asia has got you covered.
 
+## Live Link: https://exploreasia-48971.web.app/
+
 ## Features
 
 - **Tourist Spot Listings:** Browse through a curated list of tourist spots in different countries across Asia.
@@ -14,7 +16,6 @@ Explore Asia is a web application that helps users discover and explore various 
 - **User Authentication:** Sign up and log in to create your own personalized list of favorite spots and access additional features.
 - **Responsive Design:** Enjoy a seamless browsing experience on any device, whether you're using a desktop, tablet, or smartphone.
 
-Here's the updated "Technology Used" section:
 
 ---
 
